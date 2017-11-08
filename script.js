@@ -22,9 +22,7 @@ const initializePage = () => {
         spanElement.appendChild(document.createTextNode(name));
         spanElement.setAttribute("class", "nav-item");
         spanElement.setAttribute("id", htmlPageName);
-        spanElement.addEventListener('click', () => {
-            loadPageContent(htmlPageName);
-        });
+        spanElement.addEventListener('click', () => loadPageContent(htmlPageName));
 
         document.getElementById("navigation").appendChild(spanElement);
     };
@@ -32,6 +30,6 @@ const initializePage = () => {
     const navigation = document.getElementById("navigation");
     while (navigation.firstChild) navigation.removeChild(navigation.firstChild);
 
-    ["Home", "Homefy", "Viola", "Learning C", "Misc"].forEach(navi => createNavigationItem(navi));
+    ["Home", "Homefy", "Viola", "Learning C", "Miscellaneous"].forEach(navi => createNavigationItem(navi));
     loadPageContent("home");
 };
