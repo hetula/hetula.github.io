@@ -29,9 +29,9 @@ const initializePage = () => {
         document.getElementById("navigation").appendChild(spanElement);
     };
 
-    document.getElementById("navigation").innerHTML = "";
-    ["Home", "Homefy", "Viola", "Learning C", "Misc"].forEach(navi => {
-        createNavigationItem(navi);
-    });
+    const navigation = document.getElementById("navigation");
+    while (navigation.firstChild) navigation.removeChild(navigation.firstChild);
+
+    ["Home", "Homefy", "Viola", "Learning C", "Misc"].forEach(navi => createNavigationItem(navi));
     loadPageContent("home");
 };
